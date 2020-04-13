@@ -65,6 +65,11 @@ function draw(){
     platform.display();
     //log6.display();
     slingshot.display();    
+
+    if (bird.body.speed < 1) {
+        slingshot.attach (bird.body);
+    }
+    
 }
 
 function mouseDragged(){
@@ -75,3 +80,10 @@ function mouseDragged(){
 function mouseReleased(){
     slingshot.fly();
 }
+
+function keyPressed() {
+    console.log("hello")
+    if (keyCode === 32 && bird.body.speed < 1) {
+        slingshot.attach (bird.body);
+    }
+ }
